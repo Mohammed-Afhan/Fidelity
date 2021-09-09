@@ -29,7 +29,17 @@ namespace Day1Assignments.Day03
 
         static void Main()
         {
-            CreateNewEmployee();
+           var empObj = CreateNewEmployee();            
+            Console.WriteLine($"The name of the Employee entered is {empObj.EmpName} from {empObj.EmpAddress} whose date of birth is {empObj.EmpDOB.ToLongDateString()} and has his Employee ID as {empObj.EmpID}");
+
+            Employee[] employees = new Employee[2];
+            for (int i = 0; i < 2; i++)
+            {
+                employees[i] = createEmployee();
+            }
+            
+            foreach(var emp in employees)
+               Console.WriteLine(emp.EmpName);
            
 
         }
